@@ -1,0 +1,11 @@
+<%= form_for @post do |f| %>
+
+<h3>Title</h3>
+  <%= f.text_field :title, class: "form-control" %>
+<h3>Body</h3>
+  <%= f.text_field :body, class: "form-control" %>
+<h3>Link</h3>
+  <%= f.text_field :link, class: "form-control" %>
+  <br>
+  <%= f.submit class: "btn btn-primary" %>
+  <% end %>

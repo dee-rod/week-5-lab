@@ -1,0 +1,18 @@
+<h1>Effit</h1>
+<br>
+<%= link_to "New Post", new_post_path, class: "btn btn-primary", style: "margin-bottom: 2em"%>
+
+<div class = "row">
+<% @posts.each do |post| %>
+  <%= link_to "like this", upvote_path(id: post.id), class: "btn btn-info"%>
+  <%= link_to "eff this", downvote_path(id: post.id), class: "btn btn-warning"%>
+  <%= link_to "delete post", delete_path(id: post.id), class: "btn btn-danger", method: 'delete', data: {confirm: 'Confirm delete?'}%>
+  <ul class="list-group">
+    <li class="list-group-item">
+    <%= link_to post.title, (post.link) %>
+    <%= post.body %>
+    <%= post.votes %>
+    </li>
+  </ul>
+<% end %>
+</div>
